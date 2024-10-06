@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;0,800;1,600&display=swap');
+
+
+/* variables */
+
+
+:root {
+  --clr-primary: #7380ec;
+  --clr-danger: #ff7782;
+  --clr-success: #41f1b6;
+  --clr-white: #fff;
+  --clr-info-dark: #7d8da1;
+  --clr-info-light: #dce1eb;
+  --clr-dark: #363949;
+  --clr-warnig: #ff4edc;
+  --clr-light: rgba(132, 139, 200, 0.18);
+  --clr-primary-variant: #111e88;
+  --clr-dark-variant: #677483;
+  --clr-color-background: #f6f6f9;
+
+  --card-border-radius: 2rem;
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 0.8rem;
+  --border-radius-3: 1.2rem;
+
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+  --box-shadow: 0 2rem 3rem var(--clr-light);
+
+}
+
+
+
+body{
+  width: 100vw;
+  height: 100vh;
+  font-size: .7rem;
+  overflow-x: hidden;
+  background: var(--clr-color-background);
+  font-family: 'Poppins', sans-serif;
+ }
+ 
+.container  {
+  display: grid;
+  width: 96%;
+  gap: 1.8rem;
+  grid-template-columns: 14rem auto 16rem;
+  margin: 0 auto;
+}
+
+a{
+  color: var(--clr-dark);
+  text-decoration: none;
+}
+  
+h1{
+  font-weight: 800;
+  font-size: 2.8rem;
+}
+h2{
+  font-size: 1.4rem;
+}
+h3{
+  font-size: 0.87;
+}
+h4{
+  font-weight: 0.8rem;
+}
+h5{
+  font-size: 0.77rem;
+}
+
+.primary {
+  color: var(--clr-primary);
+}
+    
+.danger {
+  color: var(--clr-danger);
+}
+  
+.warning {
+  color: var(--clr-warnig);
+}
+
+aside{
+  height: 100vh;
+}
+
+aside .top{
+  background: var(--clr-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.4rem;
+}
+  
+aside .logo{
+  display: flex;
+  gap: 1rem;
+}
+
+aside h2{
+  padding: 4px;
+}
+
+aside .logo h2{
+  position: relative;
+  left: 40px;
+}
+aside .logo img{
+  width: 2rem;
+  height: 2rem;
+}
+aside .top div.close span{
+  display: none;
+}
+
+aside .sidebar{
+  background: var(--clr-white);
+  display: flex;
+  flex-direction: column;
+  height: 86vh;
+  position: relative;
+  top: 1rem;
+}
+  
+aside h3{
+  font-weight: 500;
+}
+  
+aside .sidebar a{
+  display: flex;
+  color: var(--clr-info-dark);
+  margin-left: 2rem;
+  gap: 1rem;
+  align-items: center;
+  height: 3.3rem;
+  transition: all .1s ease;
+  text-decoration: none;
+}
+  
+aside .sidebar a span{
+  font-size: 1.6rem;
+  transition: all .3s ease-in-out;
+}
+  
+aside .sidebar a:last-child{
+  position: absolute;
+  bottom: 1rem; 
+  width: 100%;
+}
+  
+aside .sidebar a.active{
+  background-color: var(--clr-light);
+  color: var(--clr-primary);
+  margin-left: 0;
+  border-left: 5px solid var(--clr-primary);
+  margin-left: calc(1rem - 3px);
+}
+aside .sidebar a:hover span{
+  margin-left: 1rem;
+}
+  
+aside .sidebar a span.msg_count{
+  background-color: var(--clr-danger);
+  color: var(--clr-white);
+  padding: 2px 5px;
+  font-size: 11px;
+  border-radius: var(--border-radius-1);
+}
+
+main{
+  margin-top: 1.4rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  grid-column: 2 / -1;
+}
+main input {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  color: var(--clr-dark);
+}
+  
+main .date{
+  display: inline-block;
+  background: var(--clr-white);
+  border-radius: var(--border-radius-1);
+  margin-top: 1rem;
+  padding: 0.5rem 1.6rem;
+}
+  
+main .insights{
+  display: grid;
+  grid-template-rows: repeat(4,1fr);
+  gap: 0.8rem;
+}
+main .insights>div{
+  background-color: var(--clr-white);
+  padding: 10px 25px 10px;
+  border-radius: var(--card-border-radius);
+  margin-top: 1rem;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
+  transition: all .3s ease;
+}
+ 
+main .insights > div:hover{
+  box-shadow: none;
+}
+main .insights>div  span{
+  background: coral;
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: var(--clr-white);
+  font-size: 2rem; 
+}
+ 
+main .insights > div.air-quality span{
+  background: var(--clr-danger);
+}
+main .insights > div.temperature span{
+  background: coral;
+}
+main .insights > div.humidity span{
+  background: var(--clr-success);
+}
+main .insights > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main .insights > div h1{
+  font-size: 1.6rem;
+}
+ 
+main h1{
+  color: var(--clr-dark);
+  margin: 0;
+}
+main .insights h1{
+  color: var(--clr-dark);
+}
+main .insights h3{
+  color: var(--clr-dark);
+  font-size: 1.2rem;
+}
+main .insights p{
+  color: var(--clr-dark);
+}
+main .insights h3{  
+  color: var(--clr-dark); 
+}
+ 
+main .insights .progress{
+  height: 8px;
+  width: 40%;
+  border-radius: 6px;
+  margin-top: 6px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.progress .prog{
+  position: relative;
+  display: block;
+  padding: 0;
+  height: 8px;
+  border-radius: 6px;
+  background: #4070f4;
+  animation: progress 0.4s ease-in-out forwards;
+  opacity: 0;
+}
+
+.carbon .progress .prog{
+  width: 10%;
+  animation-delay: 0.1s;
+}
+
+.humidity .progress .prog{
+  width: 18%;
+  animation-delay: 0.1s;
+}
+
+.air-quality .progress .prog{
+  width: 85%;
+  animation-delay: 0.1s;
+}
+
+.temperature .progress .prog{
+  width: 65%;
+  animation-delay: 0.1s;
+}
+
+
+@keyframes progress {
+  0%{
+      width: 0;
+      opacity: 1;
+  }
+  100%{
+      opacity: 1;
+  }
+}
+.prog .tooltip{
+  position: absolute;
+  right: -14px;
+  top: -28px;
+  font-size: 9px;
+  font-weight: 500;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: #4070f4;
+  z-index: 1;
+}
+
+.tooltip::before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  height: 8px;
+  width: 10px;
+  z-index: -1;
+  background-color: #4070f4;
+  transform: translateX(-50%) rotate(45deg);
+
+}
+
+.air-quality .tooltip::before{
+  background: var(--clr-danger);
+}
+
+.temperature .tooltip::before{
+  background: coral;
+}
+
+.humidity .tooltip::before{
+  background: var(--clr-success);
+}
+ 
+ /* recent data */
+main .recent_data{
+  margin-top: 2rem;
+}
+
+main .recent_data h2{
+   color: var(--clr-dark);
+}
+
+main .recent_data h2{
+ margin-bottom: 0.8rem;
+}
+main .recent_data table{
+ background: var(--clr-white);
+ width: 100%;
+ border-radius: var(--card-border-radius);
+ padding: var(--card-padding);
+ text-align: center;
+ box-shadow: var(--box-shadow);
+ transition: all .3s ease;
+ color: var(--clr-dark);
+ font-size: medium;
+}
+main .recent_data table:hover{
+ box-shadow: none;
+}
+
+main table tbody td{
+  height: 3.8rem;
+  border-bottom: 1px solid var(--clr-white);
+  color:var(--clr-dark-variant)
+}
+main table tbody tr:last-child td{
+  border: none;
+}
+
+
+main .recent_data a{
+ text-align: center;
+ display: block;
+ margin: 1rem;
+ font-size: 12px;
+}
+
+main table tbody tr td:nth-child(4) {
+  color: var(--clr-warnig);
+}
+main table tbody tr td:nth-child(5) {
+  color: var(--clr-primary);
+}
+
+#toastBox{
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.toast{
+  width: 300px;
+  height: 80px;
+  background: #fff;
+  margin: 15px 0;
+  padding: 0%;
+  display: flex;
+  align-items: center;
+  font-size: large;
+  border-radius: 15px;
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+  animation: alert 0.4s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+.toast span{
+  margin: 0 20px;
+  font-size: 35px;
+  color: #ff7782;
+}

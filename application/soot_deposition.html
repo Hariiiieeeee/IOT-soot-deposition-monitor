@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iot soot deposition</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+
+  <div class="container">
+
+    <aside>
+      <div class="top">
+        <div class="logo">
+          <h2> AIR<span class="danger">sense</span></h2>
+        </div>
+        <div class="close">
+          <span class="material-symbols-outlined">close</span>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <a href="#" class="active">
+          <span class="material-symbols-outlined">grid_view</span>
+          <h3>Dashboard</h3>
+        </a>
+
+        <a href="#">
+          <span class="material-symbols-outlined">Settings</span>
+          <h3>Settings</h3>
+        </a>
+
+        <a href="#">
+          <span class="material-symbols-outlined">report</span>
+          <h3>Reports</h3>
+       </a>
+
+        <a href="#">
+          <span class="material-symbols-outlined">Notifications</span>
+          <h3>Alerts</h3>
+          <span class="msg_count">14</span>
+        </a>
+
+        <a href="#">
+          <span class="material-symbols-outlined">logout</span>
+          <h3>logout</h3>
+        </a>
+
+      </div>
+
+    </aside>
+
+    <main>
+      <h1>Dashboard</h1>
+      <div class="date">
+        <input type="date" placeholder="#">
+      </div>
+
+      <div class="insights">
+
+        <div class="carbon">
+          <span class="material-symbols-outlined">co2</span>
+
+            <h3>Carbon level</h3>
+            <h1 id="carbon">100ppm</h1>
+
+            <div class="progress">
+              <span class="prog">
+                <span class="tooltip" id="co2toolTip">10%</span>
+              </span>
+
+            </div>
+
+        </div>
+
+        <div class="air-quality">
+          <span class="material-symbols-outlined">aq_indoor</span>
+
+            <h3>Air quality</h3>
+            <h1 id="air">85%</h1>
+
+            <div class="progress">
+              <span class="prog">
+                <span class="tooltip" id="airTooltip">85%</span>
+              </span>
+            </div>
+          
+        </div>
+
+        <div class="temperature">
+          <span class="material-symbols-outlined">thermometer</span>
+
+            <h3>Temperature</h3>
+            <h1 id="temperature">35&degC</h1>
+
+            <div class="progress">
+              <span class="prog">
+                <span class="tooltip">35&deg;</span>
+              </span>
+            </div>
+            
+        </div>
+
+        <div class="humidity">
+          <span class="material-symbols-outlined">humidity_mid</span>          
+
+            <h3>Humidity</h3>
+            <h1 id="humidity">18%</h1>
+
+            <div class="progress">
+              <span class="prog">
+                <span class="tooltip">18%</span>
+              </span>
+            </div>
+        </div>
+      </div>
+
+      <div class="recent_data">
+        <h2>Recent data</h2>
+
+        <table>
+          <thread>
+            <tr>
+              <th>Time</th>
+              <th>CO2</th>
+              <th>Temperature</th>
+              <th>Status</th>
+            </tr>
+          </thread>
+          <tbody id="table">
+            <tr>
+              <td>10:15:26</td>
+              <td>200ppm</td>
+              <td>38&deg;C</td>
+              <td class="warning">Worse</td>
+              <td class="primary">Details</td>
+            </tr>
+            <tr>
+              <td>16:20:30</td>
+              <td>150ppm</td>
+              <td>36&deg;C</td>
+              <td class="warning">Good</td>
+              <td class="primary">Details</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <center><a href="#">Show All</a></center>
+      </div>
+      
+    </main>
+    
+  </div>
+
+  <div id="toastBox"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+  <script type="module" src="script.js"></script>
+  
+</body>
+</html>
